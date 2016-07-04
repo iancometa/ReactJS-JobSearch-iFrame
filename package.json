@@ -1,0 +1,26 @@
+{
+  "name": "reactjs-jobsearch",
+  "version": "1.0.0",
+  "description": "Example of updating iframe using ReactJS",
+  "main": "app-server.js",
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "express": "^4.13.4",
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node app-server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iancometa/ReactJS-JobSearch-iFrame.git"
+  },
+  "author": "Christian Cometa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iancometa/ReactJS-JobSearch-iFrame/issues"
+  },
+  "homepage": "https://github.com/iancometa/ReactJS-JobSearch-iFrame"
+}
