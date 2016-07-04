@@ -6,7 +6,7 @@ var LocationList = React.createClass({
           return <option key={i} value={locList.value}>{locList.title}</option>
         });
         return (
-            <select onChange={this.props.handleLoc}>
+            <select className="form-control" onChange={this.props.handleLoc}>
             {list}
             </select>
         )
@@ -16,7 +16,7 @@ var LocationList = React.createClass({
 var ClassificationList = React.createClass({
     render() {
         return (
-            <select onChange={this.props.handleClas}>
+            <select className="form-control" onChange={this.props.handleClas}>
                 {
                     this.props.cItems.map(function(cItem, i){
                         return <option key={i} value={cItem.value}>{cItem.title}</option>
@@ -30,7 +30,7 @@ var ClassificationList = React.createClass({
 var PositionList = React.createClass({
     render() {
         return (
-            <select onChange={this.props.handlePos}>
+            <select className="form-control" onChange={this.props.handlePos}>
                 {
                     this.props.pItems.map(function(pItem, i){
                         return <option key={i} value={pItem.value}>{pItem.title}</option>
@@ -108,22 +108,31 @@ var JobSearch = React.createClass({
 
         return (
           <div className="container">
-            <div className="col-md-6">
-              <label>Location:</label>
-              <LocationList handleLoc={this.handleLocation} locItems={locationList.myLoc} />
-
-              <label>Classification:</label>
-              <ClassificationList handleClas={this.handleClassification} cItems={classificationList.myClasList} />
-
-              <label>Position:</label>
-              <PositionList handlePos={this.handlePosition} pItems={positionList.myPosList} />
-            </div>
-            <div className="col-md-6">
-              <iframe className="jsearchframe" src={"http://smsmt.force.com/jobpost/searchjob?websitename=SMS%20website&location=" + this.state.location + "&classification=" + this.state.classification + "&positions=" + this.state.position + "&keywords=&wmode=transparent"} wmode="Opaque"></iframe>
+            <div className="row">
+              <div className="panel panel-default">
+                <div className="panel-heading">
+                  <h3 className="panel-title">ReactJS JobSearch iFrame</h3>
+                </div>
+                <div className="panel-body">
+                  <div className="col-md-6">
+                    <label>Location:</label>
+                    <LocationList handleLoc={this.handleLocation} locItems={locationList.myLoc} />
+                    <br />
+                    <label>Classification:</label>
+                    <ClassificationList handleClas={this.handleClassification} cItems={classificationList.myClasList} />
+                    <br />
+                    <label>Position:</label>
+                    <PositionList handlePos={this.handlePosition} pItems={positionList.myPosList} />
+                  </div>
+                  <div className="col-md-6">
+                    <iframe width="100%" height="650px" className="jsearchframe" src={"http://smsmt.force.com/jobpost/searchjob?websitename=SMS%20website&location=" + this.state.location + "&classification=" + this.state.classification + "&positions=" + this.state.position + "&keywords=&wmode=transparent"} wmode="Opaque"></iframe>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         )
   }
 });
 
-ReactDOM.render(<JobSearch />, document.getElementById('jsearchbox'));
+ReactDOM.render(<JobSearch />, document.body);
