@@ -1,6 +1,6 @@
 # ReactJS-JobSearch-iFrame
 
-- Update JobSearch iFrame src using ReactJS-JobSearch-iFrame
+- This is an example of updating iFrame using ReactJS
 
 Stack:
 - ReactJS
